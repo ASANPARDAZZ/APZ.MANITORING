@@ -1,0 +1,29 @@
+/* 🌌 Global background */
+body {
+  background-color: #0a1f3d;
+  color: #e0e0e0;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  background-color: #1e3a5f;
+}
+
+/* 🎨 Panel title overrides */
+.panel-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 🎨 Chain-specific colors */
+.panel-title:contains("APZ") {
+  color: #003366;
+}
+
+.panel-title:contains("Testnet") {
+  color: #228B22;
+}
+
+.panel-title:contains("Devnet") {
+  color: #FF8C00;
+}
