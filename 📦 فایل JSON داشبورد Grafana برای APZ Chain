@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": null,
+    "title": "APZ Chain Monitoring",
+    "timezone": "browser",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "📦 آخرین بلاک سینک‌شده",
+        "targets": [
+          {
+            "expr": "apzlastsynced_block",
+            "legendFormat": "Latest Block",
+            "refId": "A"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+      },
+      {
+        "type": "stat",
+        "title": "❌ تعداد خطاهای ایندکسر",
+        "targets": [
+          {
+            "expr": "apzindexererrors_total",
+            "refId": "B"
+          }
+        ],
+        "gridPos": { "x": 12, "y": 0, "w": 6, "h": 4 }
+      },
+      {
+        "type": "graph",
+        "title": "⏱ زمان پاسخ‌دهی RPC (ثانیه)",
+        "targets": [
+          {
+            "expr": "apzrpclatency_seconds",
+            "legendFormat": "RPC Latency",
+            "refId": "C"
+          }
+        ],
+        "gridPos": { "x": 0, "y": 8, "w": 18, "h": 8 }
+      }
+    ],
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "30s"
+  }
+}
