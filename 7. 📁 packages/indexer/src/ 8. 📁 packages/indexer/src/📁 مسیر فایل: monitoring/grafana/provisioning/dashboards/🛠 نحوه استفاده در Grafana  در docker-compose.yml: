@@ -1,0 +1,3 @@
+volumes:
+  - ./monitoring/grafana/branding:/usr/share/grafana/public/img
+  - ./monitoring/grafana/branding/custom.css:/usr/share/grafana/public/css/custom.css
