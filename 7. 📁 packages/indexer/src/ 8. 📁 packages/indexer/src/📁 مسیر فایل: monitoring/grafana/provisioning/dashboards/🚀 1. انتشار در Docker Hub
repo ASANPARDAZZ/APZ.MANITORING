@@ -1,0 +1,92 @@
+🚀 1. انتشار در Docker Hub
+
+✅ مراحل انتشار
+
+1. ساخت Docker Image:
+
+`bash
+docker build -t khalilheyrani/apz-monitoring:multi-chain .
+`
+
+2. ورود به Docker Hub:
+
+`bash
+docker login
+`
+
+3. ارسال Image:
+
+`bash
+docker push khalilheyrani/apz-monitoring:multi-chain
+`
+
+> پیشنهاد: از نسخه‌گذاری استفاده کن (:v1.0.0, :latest, :multi-chain)
+
+---
+
+📄 2. طراحی صفحه معرفی پروژه (README.md برای Docker Hub و GitHub)
+
+`markdown
+
+🌐 APZ Chain Multi-Chain Monitoring
+
+Docker image for monitoring APZ Chain, Testnet, and Devnet using Prometheus and Grafana.
+
+---
+
+🚀 Features
+
+- Real-time metrics: block sync, RPC latency, indexer errors
+- Grafana dashboard with custom branding and logos
+- Dockerized setup for fast deployment
+- CI/CD pipeline for testing and image build
+
+---
+
+📦 Usage
+
+`bash
+docker pull khalilheyrani/apz-monitoring:multi-chain
+docker-compose up
+`
+
+Access:
+- Grafana: http://localhost:3000  
+- Prometheus: http://localhost:9090
+
+---
+
+📁 Dashboard Panels
+
+| Panel | Description |
+|-------|-------------|
+| 📦 Last Synced Block | Compare latest blocks across chains |
+| ⏱ RPC Latency       | Real-time RPC response times |
+| ❌ Indexer Errors    | Error counters per chain |
+
+---
+
+🎨 Branding
+
+- Logos: APZ, Testnet, Devnet
+- Theme: Deep blue, green, orange
+- Custom CSS: custom.css in branding folder
+
+---
+
+🤝 Contributing
+
+We welcome contributors who value transparency and reproducibility. See CONTRIBUTING.md.
+
+---
+
+🔐 Security
+
+Please report vulnerabilities privately. See SECURITY.md.
+
+---
+
+Built with ❤️ by Khalil Heyrani
+`
+
+---
