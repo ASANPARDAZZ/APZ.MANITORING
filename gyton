@@ -1,0 +1,56 @@
+# Creating bilingual GitHub-ready ZIP archive for APZ Chain Multi-Chain Monitoring
+import os
+import zipfile
+
+# Define base directory
+base_dir = "/mnt/data/apz-monitoring-template"
+
+# Define file structure
+file_structure = {
+    "docker-compose.yml": "version: '3'\nservices:\n  prometheus:\n    image: prom/prometheus\n    volumes:\n      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml\n    ports:\n      - '9090:9090'\n  grafana:\n    image: grafana/grafana\n    volumes:\n      - ./monitoring/grafana:/etc/grafana\n    ports:\n      - '3000:3000'\n",
+    "monitoring/prometheus.yml": "global:\n  scrape_interval: 30s\nscrape_configs:\n  - job_name: 'apz'\n    static_configs:\n      - targets: ['localhost:9100']\n",
+    "monitoring/grafana/provisioning/dashboards/multi-chain-dashboard.json": '{"dashboard": {"title": "APZ Chain Multi-Chain Monitoring", "panels": []}}',
+    "monitoring/grafana/branding/custom.css": "body { background-color: #0a1f3d; color: #e0e0e0; }",
+    "packages/monitoring/metrics.ts": "export const metrics = ['apz_block_height', 'testnet_rpc_latency', 'devnet_indexer_errors'];",
+    "packages/indexer/src/monitor.ts": "export function monitor() { console.log('Monitoring...'); }",
+    "packages/indexer/src/index.ts": "import { monitor } from './monitor'; monitor();",
+    ".github/workflows/monitoring.yml": "name: Monitoring CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Run tests\n        run: echo 'Running tests...'",
+    "README.md": "# APZ Chain Multi-Chain Monitoring\n\nMonitoring stack using Prometheus and Grafana.",
+    "README.fa.md": "# پایش چندزنجیره‌ای APZ Chain\n\nپایش با استفاده از Prometheus و Grafana.",
+    "README.bilingual.md": "# APZ Chain Multi-Chain Monitoring | پایش چندزنجیره‌ای\n\nEnglish and Persian documentation for blockchain monitoring.",
+    "CONTRIBUTING.md": "## Contributing\n\nPlease follow the guidelines.",
+    "SECURITY.md": "## Security\n\nReport vulnerabilities privately.",
+    "LICENSE": "MIT License",
+    ".gitignore": "node_modules/\ndist/",
+    "docs/index.html": "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>APZ Chain Monitoring</title><style>body{font-family:sans-serif;background:#0a1f3d;color:#fff;padding:2em}</style></head><body><h1>APZ Chain Multi-Chain Monitoring | پایش چندزنجیره‌ای</h1><p>This is a bilingual landing page for the monitoring project.</p></body></html>"
+}
+
+# Create directories and files
+for path, content in file_structure.items():
+    full_path = os.path.join(base_dir, path)
+    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+    with open(full_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+# Create placeholder logo images
+logo_paths = [
+    "monitoring/grafana/branding/apz-logo.png",
+    "monitoring/grafana/branding/testnet-logo.png",
+    "monitoring/grafana/branding/devnet-logo.png"
+]
+for logo in logo_paths:
+    logo_path = os.path.join(base_dir, logo)
+    os.makedirs(os.path.dirname(logo_path), exist_ok=True)
+    with open(logo_path, "wb") as f:
+        f.write(b"\x89PNG\r\n\x1a\n")  # Minimal PNG header
+
+# Create ZIP archive
+zip_path = "/mnt/data/apz-monitoring-template.zip"
+with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
+    for root, _, files in os.walk(base_dir):
+        for file in files:
+            full_path = os.path.join(root, file)
+            arcname = os.path.relpath(full_path, base_dir)
+            zipf.write(full_path, arcname)
+
+print("Created bilingual GitHub-ready ZIP archive: apz-monitoring-template.zip")README.bilingual.md
