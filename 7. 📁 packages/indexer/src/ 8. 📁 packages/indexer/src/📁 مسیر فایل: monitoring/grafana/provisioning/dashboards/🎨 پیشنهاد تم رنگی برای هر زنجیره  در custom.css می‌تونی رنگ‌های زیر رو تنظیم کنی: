@@ -1,0 +1,14 @@
+/* APZ: Deep Blue */
+.panel-title:contains("APZ") {
+  color: #0a1f3d;
+}
+
+/* Testnet: Green */
+.panel-title:contains("Testnet") {
+  color: #2e7d32;
+}
+
+/* Devnet: Orange */
+.panel-title:contains("Devnet") {
+  color: #ef6c00;
+}
