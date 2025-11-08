@@ -1,0 +1,26 @@
+apz-monitoring-template/
+├── docker-compose.yml
+├── monitoring/
+│   ├── prometheus.yml
+│   └── grafana/
+│       ├── provisioning/dashboards/multi-chain-dashboard.json
+│       └── branding/
+│           ├── apz-logo.png
+│           ├── testnet-logo.png
+│           ├── devnet-logo.png
+│           └── custom.css
+├── packages/
+│   ├── monitoring/metrics.ts
+│   └── indexer/src/
+│       ├── monitor.ts
+│       └── index.ts
+├── .github/workflows/monitoring.yml
+├── README.md                  ← نسخه انگلیسی
+├── README.fa.md               ← نسخه فارسی
+├── README.bilingual.md        ← نسخه دو زبانه
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE
+├── .gitignore
+└── docs/
+    └── index.html             ← صفحه معرفی عمومی (دو زبانه، واکنش‌گرا)
