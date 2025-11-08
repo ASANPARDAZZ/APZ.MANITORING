@@ -1,0 +1,51 @@
+# 🤝 Contributing to APZ Chain Monitoring
+
+We welcome contributors who value transparency, reproducibility, and open collaboration.
+
+---
+
+## 🧭 Guidelines
+
+- **Clarity first:** Write clean, well-documented code.
+- **Reproducibility matters:** Every change must be testable and observable.
+- **Respect the architecture:** Follow the folder structure and naming conventions.
+- **Security-conscious:** Avoid hardcoded secrets or unsafe patterns.
+- **Audit-friendly:** Prefer deterministic logic and clear metric definitions.
+
+---
+
+## 🛠 How to Contribute
+
+1. **Fork the repository**
+2. **Create a feature branch**  
+   `git checkout -b feature/my-improvement`
+3. **Make your changes**
+4. **Run tests**  
+   `npm test`
+5. **Submit a pull request**  
+   Include a clear description of your changes.
+
+---
+
+## 📦 Areas to Contribute
+
+- New metrics or dashboard panels
+- Support for additional chains (see `CHAIN=xyz`)
+- CI/CD improvements
+- Documentation and onboarding guides
+- Security hardening
+
+---
+
+## 🧠 Contributor Values
+
+We honor contributors who:
+
+- Protect the integrity of the system
+- Empower others through clear documentation
+- Respect boundaries and legacy
+- Build with dignity and transparency
+
+---
+
+Thank you for helping us build a reproducible and secure future 💙
