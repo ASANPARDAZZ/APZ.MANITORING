@@ -1,0 +1,28 @@
+{
+  "dashboard": {
+    "title": "APZ Chain Monitoring",
+    "refresh": "30s",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "📦 Last Synced Block",
+        "targets": [{ "expr": "apzlastsynced_block", "refId": "A" }],
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+      },
+      {
+        "type": "stat",
+        "title": "❌ Indexer Error Count",
+        "targets": [{ "expr": "apzindexererrors_total", "refId": "B" }],
+        "gridPos": { "x": 12, "y": 0, "w": 6, "h": 4 }
+      },
+      {
+        "type": "graph",
+        "title": "⏱ RPC Latency (seconds)",
+        "targets": [{ "expr": "apzrpclatency_seconds", "refId": "C" }],
+        "gridPos": { "x": 0, "y": 8, "w": 18, "h": 8 }
+      }
+    ],
+    "schemaVersion": 36,
+    "version": 1
+  }
+}
