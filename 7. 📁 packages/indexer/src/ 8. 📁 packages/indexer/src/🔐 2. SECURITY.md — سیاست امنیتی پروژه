@@ -1,0 +1,47 @@
+# 🔐 Security Policy
+
+We take security seriously and strive to protect users, contributors, and infrastructure.
+
+---
+
+## 🧭 Reporting Vulnerabilities
+
+If you discover a security issue, please report it privately:
+
+- Email: security@apzchain.org
+- Do **not** open public issues for vulnerabilities.
+
+We will respond within 72 hours and coordinate a responsible disclosure.
+
+---
+
+## 🛡 Scope
+
+This policy applies to:
+
+- Indexer logic and metric reporting
+- Prometheus/Grafana setup
+- CI/CD pipelines
+- Docker configurations
+
+---
+
+## 🚫 What to Avoid
+
+- Hardcoded secrets or credentials
+- Unvalidated external inputs
+- Unrestricted access to metric endpoints
+- Insecure Docker volumes or ports
+
+---
+
+## ✅ Best Practices
+
+- Use environment variables for secrets
+- Validate all inputs and RPC responses
+- Limit Prometheus access to trusted sources
+- Keep dependencies up-to-date
+
+---
+
+Thank you for helping us keep APZ Chain safe and transparent.
