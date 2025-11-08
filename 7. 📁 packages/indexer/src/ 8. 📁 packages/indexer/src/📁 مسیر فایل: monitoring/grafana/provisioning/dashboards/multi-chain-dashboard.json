@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Multi-Chain Monitoring",
+    "refresh": "30s",
+    "schemaVersion": 36,
+    "version": 1,
+    "panels": [
+      {
+        "type": "graph",
+        "title": "📦 Last Synced Block (All Chains)",
+        "targets": [
+          { "expr": "apzlastsynced_block", "legendFormat": "APZ", "refId": "A" },
+          { "expr": "testnetlastsynced_block", "legendFormat": "Testnet", "refId": "B" },
+          { "expr": "devnetlastsynced_block", "legendFormat": "Devnet", "refId": "C" }
+        ],
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 8 }
+      },
+      {
+        "type": "graph",
+        "title": "⏱ RPC Latency (seconds)",
+        "targets": [
+          { "expr": "apzrpclatency_seconds", "legendFormat": "APZ", "refId": "D" },
+          { "expr": "testnetrpclatency_seconds", "legendFormat": "Testnet", "refId": "E" },
+          { "expr": "devnetrpclatency_seconds", "legendFormat": "Devnet", "refId": "F" }
+        ],
+        "gridPos": { "x": 0, "y": 8, "w": 24, "h": 8 }
+      },
+      {
+        "type": "stat",
+        "title": "❌ APZ Indexer Errors",
+        "targets": [{ "expr": "apzindexererrors_total", "refId": "G" }],
+        "gridPos": { "x": 0, "y": 16, "w": 8, "h": 4 }
+      },
+      {
+        "type": "stat",
+        "title": "❌ Testnet Indexer Errors",
+        "targets": [{ "expr": "testnetindexererrors_total", "refId": "H" }],
+        "gridPos": { "x": 8, "y": 16, "w": 8, "h": 4 }
+      },
+      {
+        "type": "stat",
+        "title": "❌ Devnet Indexer Errors",
+        "targets": [{ "expr": "devnetindexererrors_total", "refId": "I" }],
+        "gridPos": { "x": 16, "y": 16, "w": 8, "h": 4 }
+      }
+    ]
+  }
+}
