@@ -1,0 +1,54 @@
+# 📡 APZ Chain Monitoring Stack
+
+This repository provides a complete monitoring stack for [APZ Chain](https://apzchain.org), including Prometheus metrics, a custom Grafana dashboard, and Docker-based deployment.
+
+---
+
+## 🚀 Features
+
+- Real-time metrics: block sync, RPC latency, indexer errors
+- Grafana dashboard with APZ branding (logo + theme)
+- Dockerized setup for local or cloud deployment
+- CI/CD pipeline for testing and Docker image build
+
+---
+
+## 📁 Project Structure
+
+| Path | Purpose |
+|------|---------|
+| `docker-compose.yml` | Launches Prometheus and Grafana |
+| `monitoring/prometheus.yml` | Prometheus scrape config |
+| `monitoring/grafana/branding/` | Custom logo and CSS |
+| `monitoring/grafana/provisioning/dashboards/` | Prebuilt Grafana dashboard |
+| `packages/monitoring/metrics.ts` | Prometheus metrics definitions |
+| `packages/indexer/src/monitor.ts` | Metric reporting logic |
+| `packages/indexer/src/index.ts` | Metric server + scheduler |
+| `.github/workflows/monitoring.yml` | CI/CD pipeline |
+| `README.md` | Project documentation |
+
+---
+
+## 📊 Metrics
+
+| Metric | Description |
+|--------|-------------|
+| `apzlastsynced_block` | Last synced block by indexer |
+| `apzindexererrors_total` | Total indexer errors |
+| `apzrpclatency_seconds` | RPC response time in seconds |
+
+---
+
+## 🎨 Branding
+
+- Logo: `apz-logo.png`
+- Theme: `custom.css` (dark blue background, white text)
+
+---
+
+## 🛠 Setup
+
+```bash
+git clone https://github.com/YOUR_USERNAME/apz-monitoring.git
+cd apz-monitoring
+docker-compose up
